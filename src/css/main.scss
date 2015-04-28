@@ -3,4 +3,13 @@
 body, html {
 	height: 100%;
 	overflow: hidden;
+	background-color: #8f8f8f;
+}
+
+div.homepage {
+	height: 100%;
+	background-image:url(/img/me.jpg);
+	// background-size:50%;
+	// background-repeat:no-repeat;
+	// background-position:50% 0;
 }
