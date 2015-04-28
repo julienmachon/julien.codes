@@ -1,0 +1,22 @@
+{
+  "name": "julien.codes",
+  "version": "1.0.0",
+  "description": "My Website",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julienmachon/julien.codes.git"
+  },
+  "author": "Julien Machon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julienmachon/julien.codes/issues"
+  },
+  "homepage": "https://github.com/julienmachon/julien.codes",
+  "devDependencies": {
+    "harp": "^0.17.0"
+  }
+}
