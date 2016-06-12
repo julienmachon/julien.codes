@@ -1,0 +1,142 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-layout/app-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/app-layout/app-box/app-box.html">
+
+<dom-module id="julien-codes-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        font-family: 'arial';
+      }
+
+      app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 212px;
+        color: #fff;
+
+        --app-header-background-front-layer: {
+          background-image: url(../../assets/img/me.jpg);
+        };
+
+        --app-header-background-rear-layer: {
+          background-color: var(--paper-cyan-800);
+        };
+      }
+
+      paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+
+      app-toolbar.tall {
+        height: 148px;
+      }
+
+      .content {
+        padding-top: 212px;
+      }
+
+      [title] {
+        font-weight: lighter;
+        margin-left: 108px;
+      }
+
+      [condensed-title] {
+        font-weight: lighter;
+        margin-left: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      app-box {
+        height: 300px;
+      }
+
+      @media (min-width: 960px) {
+        app-header {
+          height: 400px;
+        }
+
+        .content {
+          padding-top: 400px;
+          width: 70%;
+          margin: auto;
+        }
+      }
+    </style>
+
+    <app-header reveals condenses effects="waterfall resize-title blend-background parallax-background">
+      <app-toolbar>
+        <paper-icon-button icon="menu"></paper-icon-button>
+        <h4 condensed-title>[[condensedTitle]]</h4>
+      </app-toolbar>
+      <app-toolbar class="tall">
+        <h4 title>[[title]]</h4>
+      </app-toolbar>
+    </app-header>
+
+    <div class="content">
+      <section>
+        <app-box>
+          <h2>What do I do?</h2>
+          <p>
+            My day-to-day tasks mainly involve building rich interactive applications for the web.<br />
+          </p>
+          <ul>
+            <li>JavaScript developement</li>
+            <li>TDD Development</li>
+            <li>Automatic deployment (with Docker)</li>
+          </ul>
+        </app-box>
+      </section>
+
+      <section>
+        <app-box>
+          <h2>My main interests</h2>
+          <ul>
+            <li>JavaScript</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </app-box>
+      </section>
+
+      <section>
+        <app-box>
+          <h2>More about Me</h2>
+          <ul>
+            <li>GitHub</li>
+            <li>LinkedIn</li>
+            <li>Twitter</li>
+          </ul>
+        </app-box>
+      </section>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'julien-codes-app',
+
+      properties: {
+        condensedTitle: {
+          type: String,
+          value: 'Julien.codes'
+        },
+        title: {
+          type: String,
+          value: 'Hi, I\'m Julien, a Full Stack Developer',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
