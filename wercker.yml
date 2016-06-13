@@ -37,4 +37,10 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+#deploy:
+#  setps:
+#    - script:
+#      name: synching built assets
+#      code: |
+#        rsynch build/unbundeled $USER@$HOST:$PATH
 

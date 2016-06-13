@@ -12,6 +12,7 @@
       :host {
         display: block;
         font-family: 'arial';
+        background-color: var(--paper-grey-200);
       }
 
       app-header {
@@ -21,6 +22,7 @@
         width: 100%;
         height: 212px;
         color: #fff;
+        z-index: 10;
 
         --app-header-background-front-layer: {
           background-image: url(../../assets/img/me.jpg);
@@ -43,6 +45,41 @@
         padding-top: 212px;
       }
 
+      article {
+        margin: 100px auto;
+        max-width: 500px;
+        text-align: center;
+        font-weight: 100;
+      }
+
+			article h2 {
+      	font-weight: 100;
+      	font-size: 50px;
+      	margin: 5px;
+    	}
+
+    	article p {
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      article hr {
+        width: 100px;
+        height: 1px;
+        border: none;
+        margin: 20px auto;
+        background-color: black;
+      }
+
+			article ul {
+				list-style-type: none;
+			}
+
+      app-box {
+        width: 100%;
+        height: 300px;
+      }
+
       [title] {
         font-weight: lighter;
         margin-left: 108px;
@@ -56,8 +93,15 @@
       }
 
       app-box {
-        height: 300px;
-        z-index: -1;
+        height: 400px;
+        z-index: 1;
+      }
+
+      [background] {
+        background-position: bottom;
+        padding-bottom: 20px;
+        margin-top: -250px;
+        height: 100%;
       }
 
       @media (min-width: 960px) {
@@ -67,8 +111,6 @@
 
         .content {
           padding-top: 500px;
-          width: 70%;
-          margin: auto;
         }
       }
     </style>
@@ -85,7 +127,8 @@
 
     <div class="content">
       <section>
-        <app-box>
+        <article>
+          <hr />
           <h2>What do I do?</h2>
           <p>
             My day-to-day tasks mainly involve building rich interactive applications for the web.<br />
@@ -97,11 +140,14 @@
             <li>Automatic deployment: Docker, Bamboo</li>
             <li>Infrastructure and Tooling: Webservers, Private NPM registries and Git</li>
           </ul>
+        </article>
+        <app-box effects="parallax-background">
+          <image background src="../../assets/img/01.jpg" />
         </app-box>
       </section>
 
       <section>
-        <app-box>
+        <article>
           <h2>My main interests</h2>
           <p>I like learning about new technologies and other languages.
 
@@ -114,17 +160,23 @@
             <li>Internet of things, Physical web and Web bluetooth API</li>
             <li>Data!! Recording sensors on my phone when I cycle or putting small devices on my cat...</li>
           </ul>
+        </article>
+        <app-box effects="parallax-background">
+          <image background src="../../assets/img/02.jpg" />
         </app-box>
       </section>
 
       <section>
-        <app-box>
+        <article>
           <h2>More about Me</h2>
           <ul>
             <li>GitHub</li>
             <li>LinkedIn</li>
             <li>Twitter</li>
           </ul>
+        </article>
+        <app-box effects="parallax-background">
+          <img background src="../../assets/img/03.jpg" />
         </app-box>
       </section>
     </div>
