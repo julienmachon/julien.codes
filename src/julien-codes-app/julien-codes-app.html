@@ -57,15 +57,16 @@
 
       app-box {
         height: 300px;
+        z-index: -1;
       }
 
       @media (min-width: 960px) {
         app-header {
-          height: 400px;
+          height: 500px;
         }
 
         .content {
-          padding-top: 400px;
+          padding-top: 500px;
           width: 70%;
           margin: auto;
         }
@@ -88,11 +89,13 @@
           <h2>What do I do?</h2>
           <p>
             My day-to-day tasks mainly involve building rich interactive applications for the web.<br />
+            I am mostly involved with:
           </p>
           <ul>
-            <li>JavaScript developement</li>
-            <li>TDD Development</li>
-            <li>Automatic deployment (with Docker)</li>
+            <li>JavaScript developement: React, Redux, Web Components, Node</li>
+            <li>TDD Development: Mocha, Jasmine</li>
+            <li>Automatic deployment: Docker, Bamboo</li>
+            <li>Infrastructure and Tooling: Webservers, Private NPM registries and Git</li>
           </ul>
         </app-box>
       </section>
@@ -100,10 +103,16 @@
       <section>
         <app-box>
           <h2>My main interests</h2>
+          <p>I like learning about new technologies and other languages.
+
+            I have several side projects (which rarely come to an end, let's be honnest) in order to help me with experimenting with new things. <br >
+            Currently, my top 5 is:
           <ul>
-            <li>JavaScript</li>
-            <li></li>
-            <li></li>
+            <li>Golang, on my raspberry Pi</li>
+            <li>Elixir, because it looks like an awesome, powerful functional language</li>
+            <li>Micro services, with Seneca and Fuge</li>
+            <li>Internet of things, Physical web and Web bluetooth API</li>
+            <li>Data!! Recording sensors on my phone when I cycle or putting small devices on my cat...</li>
           </ul>
         </app-box>
       </section>
