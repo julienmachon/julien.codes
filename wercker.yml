@@ -42,11 +42,11 @@ deploy:
     - add-to-known_hosts:
        hostname: $HOST
     - script:
-      name: synching built assets
-      code: |
-        rsynch $WERCKER_STEP_ROOT/build/unbundeled $USER@$HOST:$PATH
+        name: synching built assets
+        code: |
+          rsynch $WERCKER_STEP_ROOT/build/unbundeled $USER@$HOST:$PATH
     - script:
-      name: echo deploy info
-      code: |
-        echo "$WERCKER_OUTPUT_DIR/build/unbundeled deployed to $USER@$HOST:$PATH"
+        name: echo deploy info
+        code: |
+          echo "$WERCKER_OUTPUT_DIR/build/unbundeled deployed to $USER@$HOST:$PATH"
 
