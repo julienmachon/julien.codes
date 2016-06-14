@@ -37,10 +37,16 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
-#deploy:
-#  setps:
-#    - script:
-#      name: synching built assets
-#      code: |
-#        rsynch build/unbundeled $USER@$HOST:$PATH
+deploy:
+  setps:
+    - add-to-known_hosts:
+       hostname: $HOST
+    - script:
+      name: synching built assets
+      code: |
+        rsynch $WERCKER_OUTPUT_DIR/build/unbundeled $USER@$HOST:$PATH
+    - script:
+      name: echo deploy info
+      code: |
+        echo "$WERCKER_OUTPUT_DIR/build/unbundeled deployed to $USER@$HOST:$PATH"
 
