@@ -44,7 +44,7 @@ deploy:
     - script:
       name: synching built assets
       code: |
-        rsynch $WERCKER_OUTPUT_DIR/build/unbundeled $USER@$HOST:$PATH
+        rsynch $WERCKER_STEP_ROOT/build/unbundeled $USER@$HOST:$PATH
     - script:
       name: echo deploy info
       code: |
