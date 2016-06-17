@@ -56,6 +56,10 @@ test:
     - script:
       name: test
       code: |
-        echo "just testing $WERCKER_OUTPUTDIR"
+        echo "just testing $WERCKER_ROOT"
     - add-to-known_hosts:
       hostname: julien.codes
+    - script:
+      name: sync built assets
+      code: |
+        rsync $WERCKER_ROOT/build/unbundled julien@julien.codes:~/julien.codes-nginx/www/julien.codes
