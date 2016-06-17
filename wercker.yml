@@ -37,6 +37,7 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+
 deploy:
   steps:
     - add-to-known_hosts:
@@ -50,3 +51,9 @@ deploy:
         code: |
           echo "$WERCKER_OUTPUT_DIR/build/unbundeled deployed to $USER@$HOST:$PATH"
 
+test:
+  steps:
+    - script:
+      name: test
+      code: |
+        echo "just testing $WERCKER_OUTPUTDIR"
