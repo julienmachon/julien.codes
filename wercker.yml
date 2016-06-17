@@ -54,9 +54,9 @@ deploy:
 test:
   steps:
     - script:
-      name: test
+      name: install rsync
       code: |
-        echo "just testing $WERCKER_ROOT"
+        apt-get install -y rsync
     - add-to-known_hosts:
       hostname: julien.codes
     - script:
