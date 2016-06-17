@@ -38,13 +38,13 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
 deploy:
-  setps:
+  steps:
     - add-to-known_hosts:
        hostname: $HOST
     - script:
         name: synching built assets
         code: |
-          rsynch $WERCKER_STEP_ROOT/build/unbundeled $USER@$HOST:$PATH
+          rsync $WERCKER_STEP_ROOT/build/unbundeled $USER@$HOST:$PATH
     - script:
         name: echo deploy info
         code: |
