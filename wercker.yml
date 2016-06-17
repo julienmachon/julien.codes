@@ -57,3 +57,5 @@ test:
       name: test
       code: |
         echo "just testing $WERCKER_OUTPUTDIR"
+    - add-to-known_hosts:
+      hostname: julien.codes
