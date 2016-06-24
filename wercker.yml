@@ -57,11 +57,11 @@ test:
         packages: rsync
     - add-ssh-key:
         keyname: SSH_KEY
+        host: julien.codes
     - add-to-known_hosts:
         hostname: julien.codes
         fingerprint: 9e:f0:90:72:fb:cc:f3:73:89:3d:69:69:1f:a1:fb:c9
     - script:
         name: sync built assets
         code: |
-          echo $(ls $WERCKER_ROOT)
           rsync $WERCKER_ROOT/build/unbundled julien@julien.codes:~/julien.codes-nginx/www/julien.codes
