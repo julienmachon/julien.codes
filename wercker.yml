@@ -53,13 +53,11 @@ deploy:
 
 test:
   steps:
-    - script:
-      name: install rsync
-      code: |
-        apt-get install -y rsync
+    - install-packages:
+        packages: rsync
     - add-to-known_hosts:
-      hostname: julien.codes
+        hostname: julien.codes
     - script:
-      name: sync built assets
-      code: |
-        rsync $WERCKER_ROOT/build/unbundled julien@julien.codes:~/julien.codes-nginx/www/julien.codes
+        name: sync built assets
+        code: |
+          rsync $WERCKER_ROOT/build/unbundled julien@julien.codes:~/julien.codes-nginx/www/julien.codes
