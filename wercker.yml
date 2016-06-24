@@ -56,7 +56,7 @@ test:
     - install-packages:
         packages: rsync
     - add-ssh-key:
-        keyname: $SSH_KEY
+        keyname: SSH_KEY
     - add-to-known_hosts:
         hostname: julien.codes
         fingerprint: 9e:f0:90:72:fb:cc:f3:73:89:3d:69:69:1f:a1:fb:c9
