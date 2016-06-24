@@ -63,4 +63,5 @@ test:
     - script:
         name: sync built assets
         code: |
+          echo $(ls $WERCKER_ROOT)
           rsync $WERCKER_ROOT/build/unbundled julien@julien.codes:~/julien.codes-nginx/www/julien.codes
