@@ -57,6 +57,7 @@ test:
         packages: rsync
     - add-to-known_hosts:
         hostname: julien.codes
+        fingerprint: SHA256:zfn/hf0L7sl535SeH2H+tzG12iyn4FyEzs2pmxwf2wI 
     - script:
         name: sync built assets
         code: |
