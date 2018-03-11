@@ -38,9 +38,3 @@ jobs:
       # build
       - run: yarn build
 
-  deployment:
-    prod:
-      branch: master
-      commands:
-        - aws s3 sync ~/repo/public s3://julien.codes --delete
-
