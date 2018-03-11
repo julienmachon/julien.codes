@@ -34,7 +34,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      # - run: yarn test
+      # build
+      - run: yarn build
 
+  deployment:
+    prod:
+      branch: master
+      commands:
+        - aws s3 sync ~/repo/public s3://julien.codes --delete
 
 
