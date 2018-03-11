@@ -1,26 +1,25 @@
 {
-  "name": "julien.codes",
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
   "version": "1.0.0",
-  "description": "My Website",
-  "main": "dist/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install",
-    "serve": "polymer serve",
-    "build": "polymer build"
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.223",
+    "gatsby-link": "^1.6.38",
+    "gatsby-plugin-react-helmet": "^2.0.6",
+    "react-helmet": "^5.2.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/julienmachon/julien.codes.git"
-  },
-  "author": "Julien Machon",
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/julienmachon/julien.codes/issues"
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://julien.codes",
   "devDependencies": {
-    "bower": "^1.7.9",
-    "polymer-cli": "^0.11.1"
+    "prettier": "^1.11.1"
   }
 }
