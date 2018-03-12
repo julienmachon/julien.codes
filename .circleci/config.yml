@@ -20,10 +20,10 @@ jobs:
       # build
       - run: yarn build
   deploy:
-    prod:
-      branch: master
-      commands:
-        - aws s3 sync ~/repo/public s3://julien.codes --delete
+    branches:
+      - master
+    steps:
+      - run: aws s3 sync ~/repo/public s3://julien.codes --delete
 
 workflows:
   version: 2
