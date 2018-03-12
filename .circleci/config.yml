@@ -19,20 +19,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       # build
       - run: yarn build
-  deploy:
-    branches:
-      - master
-    steps:
+      # deploy
       - run: aws s3 sync ~/repo/public s3://julien.codes --delete
-
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
