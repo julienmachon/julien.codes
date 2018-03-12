@@ -24,6 +24,7 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              sudo apt-get -y -qq install awscli
               aws s3 sync ~/repo/public s3://julien.codes --delete
             fi
 
