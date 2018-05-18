@@ -30,6 +30,12 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
+      - run:
+          name: Move compiled site to workspace
+          command: |
+            set -exu
+            mkdir -p /tmp/workspace/public
+            mv public /tmp/workspace/public/
       - persist_to_workspace:
           root: *workspace_root
           paths: public
@@ -40,6 +46,12 @@ jobs:
       - image: governmentpaas/awscli
     steps:
       - *attach_workspace
+      - run:
+          name: Restore compiled site from workspace
+          command: |
+            set -exu
+            mkdir public
+            mv /tmp/workspace/public/ public
       - run:
           name: Deploy to S3
           command: aws s3 sync public s3://julien.codes/ --delete
