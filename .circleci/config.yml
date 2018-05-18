@@ -1,12 +1,19 @@
 version: 2.0
 
 references:
-  workspace_config: &workspace_config
-    working_directory: /tmp
+  container_config: &container_config
+    working_directory: /root/site
+
+  workspace_root: &workspace_root
+    /tmp/workspace
+
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
 
 jobs:
   build-job:
-    <<: *workspace_config
+    <<: *container_config
     docker:
       - image: circleci/node:9
     steps:
@@ -24,15 +31,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
       - persist_to_workspace:
-          root: public
+          root: *workspace_root
+          paths: public
 
   deploy-job:
-    <<: *workspace_config
+    <<: *container_config
     docker:
       - image: governmentpaas/awscli
     steps:
-      - attach_workspace:
-          at: /tmp/public
+      - *attach_workspace
       - run:
           name: Deploy to S3
           command: aws s3 sync public s3://julien.codes/ --delete
