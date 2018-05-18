@@ -2,7 +2,7 @@ version: 2.0
 
 references:
   container_config: &container_config
-    working_directory: /root/site
+    working_directory: /tmp/repo
 
   workspace_root: &workspace_root
     /tmp/workspace
