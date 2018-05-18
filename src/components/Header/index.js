@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: '#0074D9',
       marginBottom: '1.45rem',
     }}
   >
@@ -23,11 +23,11 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Julien.codes
         </Link>
       </h1>
     </div>
   </div>
-)
+);
 
-export default Header
+export default Header;
