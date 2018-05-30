@@ -1,32 +1,46 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/Header';
+import Footer from '../components/Footer';
 import './index.css';
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="julien.codes"
-      meta={[
-        { name: 'description', content: 'An awesome website that is!' },
-        { name: 'keywords', content: 'javascript, docker, aws, python' },
-      ]}
-    />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-);
+function delay(seconds) {
+  return setTimeout(fn, seconds * 1000);
+}
+
+class TemplateWrapper extends PureComponent {
+  state = {
+    isLoading: true,
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({
+      isLoading: false,
+    }), 500)
+  }
+
+  render() {
+    return (
+      <div id="wrapper">
+        <Helmet
+          title="julien.codes"
+          meta={[
+            { name: 'description', content: 'An awesome website that is!' },
+            { name: 'keywords', content: 'javascript, docker, aws, python' },
+          ]}
+          bodyAttributes={{
+            class: this.state.isLoading ? 'is-loading' : '',
+          }}
+        />
+        <section id="main">
+          {this.props.children()}
+        </section>
+        <Footer />
+      </div>
+    );
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

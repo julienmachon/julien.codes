@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Julien.codes',
+    description: 'Lead Full Stack Developer - JS, Node, Microservices, Docker, AWS',
   },
   plugins: ['gatsby-plugin-react-helmet'],
 };
